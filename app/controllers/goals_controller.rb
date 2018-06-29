@@ -1,4 +1,4 @@
-class GoalsController < ApplicationController
+class GoalsController < OpenReadController
   before_action :set_goal, only: [:show, :update, :destroy]
 
   # GET /goals
@@ -10,12 +10,12 @@ class GoalsController < ApplicationController
 
   # GET /goals/1
   def show
-    render json: @goal
+    render json: @goal.find(params[:id])
   end
 
   # POST /goals
   def create
-    @goal = Goal.new(goal_params)
+    @goal = current_user.goals.build(goal_params)
 
     if @goal.save
       render json: @goal, status: :created
@@ -36,16 +36,18 @@ class GoalsController < ApplicationController
   # DELETE /goals/1
   def destroy
     @goal.destroy
+
+    head :no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_goal
-      @goal = Goal.find(params[:id])
+      @goal = current_user.goals.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def goal_params
-      params.require(:goal).permit(:title, :description, :completed)
+      params.require(:goal).permit(:title, :description, :completed, :user_id)
     end
 end
