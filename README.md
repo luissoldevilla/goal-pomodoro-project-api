@@ -3,6 +3,8 @@
 API repo for full stack web application. The application purpose is
 to allow users to keep track of their goals.
 
+## API
+
 ## The Idea
 
 The reason I decided to make this application was that I use the Pomodoro
@@ -42,26 +44,6 @@ CRUD action to other users resources.
 - For V2 I will integrate another table for accomplished since I plan to have a
 timer integrated, once the timer or intervals are done the goals became true,
 and will be assigned to the accomplished goals table
-## API
-
-### Authentication
-
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| POST   | `/sign-up`             | `users#signup`    |
-| POST   | `/sign-in`             | `users#signin`    |
-| PATCH  | `/change-password`     | `users#changepw`  |
-| DELETE | `/sign-out`        | `users#signout`   |
-
-
-### Users
-
-| Verb | URI Pattern | Controller#Action |
-|------|-------------|-------------------|
-| GET  | `/users`    | `users#index`     |
-| GET  | `/users/1`  | `users#show`      |
-| PATCH| `/users/1`  | `users#update`    |
-
 
 ## Deployed Links:
 
