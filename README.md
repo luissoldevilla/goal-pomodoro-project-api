@@ -15,6 +15,10 @@ make a goal tracking system based on the Pomodoro technique, meaning the user is
 able to take action on their goal using the Pomodoro technique within the
 application.
 
+## Client Repo
+
+[For Client Repo click here](https://github.com/luissoldevilla/goal-pomodoro-project-client)
+
 ## ERD (Entity Relationship Diagram):
 ![alt text](https://i.imgur.com/S3xE7I8.png)
 
